@@ -1,0 +1,69 @@
+.cmt-list {
+}
+.cmt-item {
+    margin-bottom: 10px;
+}
+
+.img-user {
+    width: 20%;
+    height: 35px;
+    display: flex;
+    align-items: center;
+
+    & img {
+        width: 35px;
+        height: 100%;
+        border-radius: 5px;
+        object-fit: cover;
+    }
+}
+.content {
+    margin-left: 10px;
+}
+
+.cmt-user {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.name-user {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+    margin-left: 10px;
+}
+
+.action {
+    margin-left: 15px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+        background-color: gray;
+    }
+}
+
+.menu-popper {
+    width: 200px;
+    padding: 8px 15px;
+}
+
+.title-btn {
+    line-height: 1;
+    width: 100%;
+    border-radius: 5px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+    &:hover {
+        background-color: gray;
+    }
+}

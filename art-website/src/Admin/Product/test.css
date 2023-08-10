@@ -1,0 +1,13 @@
+.image-zoom {
+    position: relative;
+    width: 300px; /* Độ rộng của khung chứa ảnh */
+  }
+  
+  .zoom-image {
+    width: 60%;
+    transition: transform 0.8s ease; /* Thời gian và hiệu ứng chuyển đổi */
+  }
+  
+  .zoom-image:hover {
+    transform: scale(2.1); /* Kích thước zoom khi hover vào ảnh */
+  }

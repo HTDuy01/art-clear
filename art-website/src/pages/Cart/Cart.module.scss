@@ -1,0 +1,66 @@
+.wrapper {
+    position: relative;
+}
+.title {
+    font-size: 2.4rem;
+    margin: 25px 0;
+}
+
+.container {
+    display: flex;
+}
+
+.listCart {
+    width: 100%;
+    padding-right: 24px;
+    min-height: 800px;
+}
+
+.pay {
+    max-width: 384px;
+    max-height: 407px;
+    width: 100%;
+    border-radius: 3px;
+    box-shadow: 0 10px 5px -5px rgb(0 0 0 / 5%);
+    border: solid 1px #ededf0;
+    padding: 20px 24px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: calc(var(--default-layout-header-height) + 10px);
+    z-index: 1;
+    flex-shrink: 0;
+    flex-grow: 1;
+}
+
+.pay-title {
+    font-weight: 700;
+    line-height: 1;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.cart-subtotal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 28px;
+    margin-bottom: 16px;
+}
+.cart-subtotal__title,
+.total-price {
+    font-weight: 700;
+}
+
+.btn-pay {
+    width: 100%;
+}
+
+@media only screen and (max-width: 1024px){
+    .container {
+        flex-direction: column;
+    }
+    .pay{
+        max-width: none;
+        width: 100%;
+    }
+}

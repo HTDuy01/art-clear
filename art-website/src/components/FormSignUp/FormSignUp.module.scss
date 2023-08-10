@@ -1,0 +1,96 @@
+.text-form {
+    margin-bottom: 20px;
+}
+
+.title-login {
+    font-size: 2rem;
+    margin-bottom: 14px;
+}
+
+.label-login {
+    color: #303538;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 5px;
+}
+
+.input-login {
+    background: #fbfbfd;
+    box-shadow: none;
+    border: 1px solid #899298;
+    padding: 10px 13px 8px;
+    font-size: 16px;
+    height: 40px;
+    letter-spacing: 0;
+    line-height: 1.4;
+    color: #343a3d;
+    border-radius: 3px;
+    margin: 0;
+    width: 100%;
+    margin: 5px 0 0 0;
+}
+.input-file{
+    color: black;
+}
+.error {
+    color: #ff0000;
+    margin-top: 5px;
+    font-weight: 700;
+}
+
+.btn-login {
+    width: 100%;
+    height: 51px;
+    border-radius: 5px;
+    font-size: 1.8rem;
+}
+
+.ruled {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #e2e9ee;
+    line-height: 0;
+    margin: 38px 0;
+    color: #899298;
+
+    span {
+        background: #fff;
+        padding: 0 20px;
+    }
+}
+
+.btn-login-fb {
+    width: 100%;
+    height: 51px;
+    border-radius: 5px;
+    font-size: 1.8rem;
+    border-color: #1877f2;
+    color: #1877f2;
+}
+
+.btn-login-gg {
+    width: 100%;
+    height: 51px;
+    border-radius: 5px;
+    font-size: 1.8rem;
+    border-color: #303538;
+    color: #303538;
+}
+
+.icon {
+    padding-right: 5px;
+}
+
+.sign-up {
+    text-align: center;
+    font-weight: 700;
+    margin: 55px auto;
+    font-size: 18px;
+}
+
+.link-sign-up {
+    margin-left: 5px;
+    color: #088178;
+    text-decoration: none;
+}

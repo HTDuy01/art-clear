@@ -1,0 +1,101 @@
+@import 'normalize.css';
+
+:root {
+    --default-color: #303538;
+    --font-family: 'Averta', sans-serif;
+    --primary: #088178;
+    --white: #fff;
+    --primary-hover: #047771;
+
+    --default-layout-width: 1568px;
+    --default-layout-container-width: 1290px;
+    --default-layout-horizontal-spacer: 16px;
+    --default-layout-header-height: 90px;
+    --default-layout-sidebar-height: 48px;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: 1.6rem;
+    line-height: 1.5;
+    text-rendering: optimizeSpeed;
+    color: var(--default-color);
+    overflow-y: overlay;
+}
+
+// Font emmbeded
+// @font-face {
+//     font-family: Averta;
+//     font-weight: 700;
+//     src: url('/assets/fonts/averta-bold-webfont.woff2') format('woff2');
+// }
+@font-face {
+    font-family: Averta;
+    src: url('/assets/fonts/averta-regular-webfont.woff2') format('woff2');
+}
+// @font-face {
+//     font-family: Averta;
+
+//     src: url('/assets/fonts/averta-regularitalic-webfont.woff2') format('woff2');
+// }
+// @font-face {
+//     font-family: Averta;
+
+//     src: url('/assets/fonts/averta-semibold-webfont.woff2') format('woff2');
+// }
+@font-face {
+    font-family: Brule;
+    font-weight: 700;
+    src: url('/assets/fonts/Brule-Bold.woff2') format('woff2');
+}
+@font-face {
+    font-family: Brule;
+    font-weight: 700;
+    src: url('/assets/fonts/Brule-SemiBold.woff2') format('woff2');
+}
+@font-face {
+    font-family: FilSonPro;
+    font-weight: 500;
+    src: url('/assets/fonts/FilsonPro-Medium.woff2') format('woff2');
+}
+@font-face {
+    font-family: FilSonPro;
+    font-weight: 600;
+    src: url('/assets/fonts/FilsonPro-Regular.woff2') format('woff2');
+}
+@font-face {
+    font-family: LyonDisplay;
+    font-weight: 700;
+    src: url('/assets/fonts/LyonDisplay-Bold-Web.woff2') format('woff2');
+}
+
+body {
+    font-size: 1.6rem;
+    line-height: 1.5rem;
+    text-rendering: optimizeSpeed;
+}
+
+button,
+input,
+[tabindex] {
+    border: none;
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}

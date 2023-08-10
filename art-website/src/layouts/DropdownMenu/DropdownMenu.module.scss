@@ -1,0 +1,56 @@
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-toggle {
+    background-color: transparent;
+    color: #333;
+    // padding: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  .dropdown-toggle>svg{
+    height: 2em;
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 300px;
+    background-color: rgba($color: #ffffff, $alpha: 1);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #ccc;
+    // display: none;
+    border-radius: 2em;
+  }
+  
+  .dropdown-menu li {
+    padding: 10px;
+  }
+  .dropdown-menu> .container-renderLogin p>img {
+    margin: 0 10px;
+    border: 1px solid #a0a0a0;
+    border-radius: 50%;
+    width: 20%;
+    display: inline;
+  }
+  .dropdown-menu .container-search div {
+    width: 100%;
+   
+
+  }
+ 
+  .dropdown-menu .container-cart button{
+    margin: 0 25px;
+    background-color: transparent;
+
+  }
+  
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  

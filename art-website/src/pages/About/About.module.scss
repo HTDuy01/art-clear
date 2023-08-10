@@ -1,0 +1,118 @@
+.wrapper {
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.about-page__hero {
+    padding: 60px 0 20px;
+}
+.sp-container {
+    width: calc(100% + 20px);
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -10px;
+    margin-right: -10px;
+}
+.about-page__hero-text {
+    width: 580px;
+    padding: 85px 15px 0;
+}
+.about-heading {
+    font-size: 4.8rem;
+    max-width: 515px;
+    text-align: start;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.about-subhead {
+    color: #303538;
+    font-size: 1.8rem;
+    max-width: 515px;
+    line-height: 1.5;
+}
+.about-page__hero-img {
+    flex: 1;
+
+    & img {
+        width: 90%;
+    }
+}
+
+// Background
+.about-page_background {
+    background-image: url('https://d3ui957tjb5bqd.cloudfront.net/images/1/about/border-top.png?N2w%2FtNTUWjQ1FSvS5Garfg%3D%3D'),
+        url('https://d3ui957tjb5bqd.cloudfront.net/images/1/about/border-bottom.png?%2FtZCsOvjVTVaCKgVE39A%2FA%3D%3D');
+    background-color: #f4f8fb;
+    background-size: 101%, 104%;
+    background-repeat: no-repeat, no-repeat;
+    background-position: center top, center bottom;
+    margin: 0 -200px;
+    padding: 150px 200px;
+}
+
+.about-page_background-text {
+    width: 55%;
+    padding-right: 40px;
+}
+
+.background_text-heading {
+    font-size: 3.6rem;
+    text-align: start;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.background_text-subhead {
+    color: #303538;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+// about-page__handpicked-products
+.about-page__handpicked-products {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+.about-page__handpicked-left {
+    padding-right: 10px;
+}
+
+.about-page__handpicked-image {
+    width: calc(100% + 20px);
+}
+.about-page__handpicked-right {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+}
+
+// video
+.about-page_video {
+    width: calc(100% + 30px);
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.about-page_video-text {
+    width: 55%;
+}
+
+.video-text_heading {
+    color: #303538;
+    font-weight: 700;
+    line-height: 1.5;
+    margin: 0 0 14px;
+    font-size: 3.6rem;
+}
+
+// loop
+.about-page__loop {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}

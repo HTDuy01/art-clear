@@ -1,0 +1,11 @@
+.wrapper {
+    width: 100%;
+    padding: 10px;
+    margin-top: var(--default-layout-header-height);
+    border-bottom: 1px solid #121314;
+    // height: var(--default-layout-sidebar-height);
+    position: absolute;
+    top: 0;
+    background-color: var(--white);
+    z-index: 0;
+}

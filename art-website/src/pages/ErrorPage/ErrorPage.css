@@ -1,0 +1,17 @@
+.error-page {
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f8f8;
+  }
+  
+  .error-page__title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .error-page__message {
+    font-size: 16px;
+    color: #666;
+  }
+  

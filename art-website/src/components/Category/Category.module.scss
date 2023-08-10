@@ -1,0 +1,43 @@
+.wrapper {
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.category-item {
+    cursor: pointer;
+    color: #303538;
+    display: block;
+    font-size: 1.4rem;
+    line-height: 1.6;
+    margin: 0 10px;
+    font-weight: 700;
+    position: relative;
+}
+
+.category-item::after {
+    transition: all 0.5s ease-in-out;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    display: block;
+    width: 0%;
+    background-color: var(--primary-hover);
+}
+
+.category-item:hover.category-item::after {
+    width: 100%;
+}
+
+@media only screen and (max-width: 1070px) {
+    .nav {
+        overflow-x: scroll;
+    }
+}

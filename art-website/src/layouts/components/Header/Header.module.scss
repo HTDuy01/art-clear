@@ -1,0 +1,133 @@
+.wrapper {
+    --search-border-radius: 92px;
+    --search-height: 46px;
+    --search-top-spacer: 9px;
+    --search-button-width: 52px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--default-layout-header-height, 60px);
+
+    background-color: var(--white);
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #121314;
+}
+.inner {
+    height: 100%;
+    width: var(--default-layout-width);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--default-layout-horizontal-spacer);
+   
+    // padding: 24px 0;
+}
+
+.logo-link {
+    // width: 30%;
+    text-align: center;
+    // display: flex;
+    // transform: translateX(-150px);
+}
+
+.logo {
+    width: 88px;
+    height: 36px;
+    object-fit: cover;
+}
+// search
+.search1{
+    width: 30%;
+}
+// Action
+.actions {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.action-btn {
+    position: relative;
+    background-color: transparent;
+    font-size: 1.2rem;
+    padding: 4px 12px;
+    color: #161823;
+    margin-top: 5px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.user-avatar {
+    height: 32px;
+    width: 32px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-left: 12px;
+    cursor: pointer;
+}
+
+.badge {
+    position: absolute;
+    top: -8px;
+    right: -5px;
+    padding: 0px 6px;
+    height: 2rem;
+    line-height: 2rem;
+    border-radius: 10px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--white);
+    font-family: var(--font-family);
+    background-color: var(--primary);
+}
+.bars{
+    display: none;
+}
+// 
+@media only screen and (max-width: 1024px){
+
+    
+    .search1 div{
+     width: 100%;
+    }
+ 
+    .logo-link {
+        // width: 30%;
+        text-align: center;
+    }
+    
+    .actions {
+        width: 30%;
+        align-items: center;
+        justify-content: flex-end;
+        
+    }
+}
+@media only screen and (max-width: 740px){ 
+    .search1 div{
+       display: none;
+    }
+    .logo-link {
+        width: 55%;
+        display: flex;
+        // transform: translateX(-150px);
+        align-items: center;
+        justify-content: flex-start;
+    }
+    // .logo-link>img{
+    //     float: none;
+
+    // }
+    .actions {
+        display: none;
+    }
+    .bars{
+        width: 10%;
+        display: block;
+    }
+}
