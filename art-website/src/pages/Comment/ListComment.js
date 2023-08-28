@@ -61,7 +61,7 @@ function ListComment(props) {
                 let comment1 = value.comment;
                 let id = value.id;
 
-                const srcImg = `https://art-clear-backend.onrender.com/api/auth/detailsUser/avatar/${value.userId}`;
+                const srcImg = `http://localhost:8080/api/auth/detailsUser/avatar/${value.userId}`;
 
                 if (value.commentId == 0) {
                     return (
@@ -91,7 +91,7 @@ function ListComment(props) {
                                 let idComment = value.commentId;
                                 let id2 = value.id;
                                 let userId2 = value.userId;
-                                const srcImg2 = `https://art-clear-backend.onrender.com/api/auth/detailsUser/avatar/${userId2}`;
+                                const srcImg2 = `http://localhost:8080/api/auth/detailsUser/avatar/${userId2}`;
                                 if (id == idComment) {
                                     return (
                                         <ul key={key2} className={cx('cmt-list')}>

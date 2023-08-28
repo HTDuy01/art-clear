@@ -17,7 +17,7 @@ function Artists(props) {
     // const params = useParams();
 
     useEffect(() => {
-        axios.get(' https://art-clear-backend.onrender.com/api/auth/ListArtists').then((res) => {
+        axios.get(' http://localhost:8080/api/auth/ListArtists').then((res) => {
             setArtists(res.data);
             setRunAgain('stop');
         });

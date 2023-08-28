@@ -1,18 +1,18 @@
-import axios from "axios";
-import { useParams } from "react-router-dom";
+import axios from 'axios';
+import { useParams } from 'react-router-dom';
 
 function DeleteProduct(props) {
-    
-    
-    function handleDelete(){
-        axios.delete(' https://art-clear-backend.onrender.com/api/auth/deleteImage/' + props.id)
-        props.getRunAgain("run")
+    function handleDelete() {
+        axios.delete(' http://localhost:8080/api/auth/deleteImage/' + props.id);
+        props.getRunAgain('run');
     }
-    return ( 
+    return (
         <>
-        <button type="button" className="btn btn-danger" onClick={handleDelete} >Delete</button>
+            <button type="button" className="btn btn-danger" onClick={handleDelete}>
+                Delete
+            </button>
         </>
-     );
+    );
 }
 
 export default DeleteProduct;

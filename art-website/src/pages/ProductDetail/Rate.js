@@ -23,7 +23,7 @@ function Rate(props) {
     const [totalRating, setTotalRating] = useState([]);
     useEffect(() => {
         axios
-            .get('https://art-clear-backend.onrender.com/api/auth/image/rate/' + params.id)
+            .get('http://localhost:8080/api/auth/image/rate/' + params.id)
             .then((res) => {
                 setTotalRating(res.data);
             })
@@ -56,7 +56,7 @@ function Rate(props) {
                     rate: newRating,
                 };
                 axios
-                    .post('https://art-clear-backend.onrender.com/api/auth/image/rate', data)
+                    .post('http://localhost:8080/api/auth/image/rate', data)
                     .then((res) => {})
                     .catch((err) => console.log(err));
             }

@@ -14,7 +14,7 @@ const cx = classNames.bind(styles);
 
 function FormSignUp() {
     const navigate = useNavigate();
-    const initialValues = { username: '', email: '', password: '', fullname: '' ,file:''};
+    const initialValues = { username: '', email: '', password: '', fullname: '', file: '' };
     const [formValues, setFormValues] = useState(initialValues);
     const [formErrors, setFormErrors] = useState({});
     const [isSubmit, setIsSubmit] = useState(false);
@@ -74,7 +74,7 @@ function FormSignUp() {
 
             if (!arrTypeImage.includes(TypeImg)) {
                 // set lỗi "file bạn chọn không phải ảnh" + typeFile;
-                errors.file = nameFile +' không phải file ảnh' ;
+                errors.file = nameFile + ' không phải file ảnh';
             }
         }
 
@@ -85,8 +85,6 @@ function FormSignUp() {
         let flag = true;
         e.preventDefault();
         setIsSubmit(true);
-
-        
 
         if (flag) {
             // const data = {
@@ -109,7 +107,7 @@ function FormSignUp() {
 
             console.log(formData);
             axios
-                .post(' https://art-clear-backend.onrender.com/api/auth/signup', formData)
+                .post(' http://localhost:8080/api/auth/signup', formData)
                 .then((res) => {
                     console.log(res.data);
                     alert('thành công');

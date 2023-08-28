@@ -9,7 +9,7 @@ function EditCategories(props) {
     });
 
     useEffect(() => {
-        axios.get(' https://art-clear-backend.onrender.com/api/auth/categoriesDetails/' + props.id).then((res) => {
+        axios.get(' http://localhost:8080/api/auth/categoriesDetails/' + props.id).then((res) => {
             seteditCategories({
                 name: res.data.categoryName,
             });
@@ -46,7 +46,7 @@ function EditCategories(props) {
                 categoryName: editCategories.name,
             };
             axios
-                .put(' https://art-clear-backend.onrender.com/api/auth/Admin/UpdateCategories/' + props.id, data)
+                .put(' http://localhost:8080/api/auth/Admin/UpdateCategories/' + props.id, data)
                 .then((res) => {
                     // console.log(res);
                     props.getRunAgain('run');

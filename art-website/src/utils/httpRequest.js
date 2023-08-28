@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const httpRequest = axios.create({
-    baseURL: 'https://art-clear-backend.onrender.com/api/auth',
+    baseURL: 'http://localhost:8080/api/auth',
 });
 
 export const get = async (path, options = {}) => {

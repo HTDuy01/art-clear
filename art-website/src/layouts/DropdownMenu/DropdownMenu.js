@@ -33,7 +33,7 @@ function DropdownMenu() {
     const checkUser = localStorage.getItem('user');
     if (checkUser) {
         obj = JSON.parse(checkUser);
-        srcImg = 'https://art-clear-backend.onrender.com/api/auth/detailsUser/avatar/' + obj.data.id;
+        srcImg = 'http://localhost:8080/api/auth/detailsUser/avatar/' + obj.data.id;
     }
 
     const userAdmin = [

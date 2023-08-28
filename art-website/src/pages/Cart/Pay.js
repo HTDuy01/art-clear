@@ -30,47 +30,42 @@ function Pay(props) {
     const checkLogin = localStorage.getItem('checkLogin');
     function handlePay() {
         if (checkLogin) {
-        const data = {
-            buyerName: user.data.fullname,
-            items: items,
-            totalAmount: props.total,
-        };
+            const data = {
+                buyerName: user.data.fullname,
+                items: items,
+                totalAmount: props.total,
+            };
 
-        axios.post('https://art-clear-backend.onrender.com/api/auth/invoices', data).then((res) => {
-            setIsOpen(false);
-            localStorage.setItem('cart', JSON.stringify({}));
-            valueTotal.setTongSoLuong(0);
-            setIsLoading(true)
-            let obj = JSON.parse(localStorage.getItem('cart'));
-            
-            const showLoading = setTimeout(() => {
-                setIsLoading(false);
-                setIsOke(true);
-              }, 5000);
+            axios.post('http://localhost:8080/api/auth/invoices', data).then((res) => {
+                setIsOpen(false);
+                localStorage.setItem('cart', JSON.stringify({}));
+                valueTotal.setTongSoLuong(0);
+                setIsLoading(true);
+                let obj = JSON.parse(localStorage.getItem('cart'));
 
-            
-            const hideLoading = setTimeout(() => {
-                setIsOke(false);
-                if (Object.keys(obj).length === 0) {
-                    valueTotal.setTongSoLuong(0);
-                }
-                navigate('/')
+                const showLoading = setTimeout(() => {
+                    setIsLoading(false);
+                    setIsOke(true);
+                }, 5000);
 
-            }, 7000);
-          
-              return () => {
-                clearTimeout(showLoading);
-                clearTimeout(hideLoading)
-              };
-            
-        });
-        }else{
-            let answer = window.confirm("Please log in !");
+                const hideLoading = setTimeout(() => {
+                    setIsOke(false);
+                    if (Object.keys(obj).length === 0) {
+                        valueTotal.setTongSoLuong(0);
+                    }
+                    navigate('/');
+                }, 7000);
+
+                return () => {
+                    clearTimeout(showLoading);
+                    clearTimeout(hideLoading);
+                };
+            });
+        } else {
+            let answer = window.confirm('Please log in !');
             if (answer) {
-                navigate('/login')
-            }
-            else {
-                
+                navigate('/login');
+            } else {
             }
         }
     }
@@ -119,10 +114,9 @@ function Pay(props) {
                 </div>
             )}
 
-        {isLoading &&
+            {isLoading && (
                 <div className={cx('overlay')}>
                     <div className={cx('popup')}>
-
                         <div className={cx('form_container')}>
                             <Loading />
 
@@ -130,15 +124,15 @@ function Pay(props) {
                         </div>
                     </div>
                 </div>
-        }
+            )}
 
-        {isOke &&
-               <div className={cx('modal-manager')}>
+            {isOke && (
+                <div className={cx('modal-manager')}>
                     <div className={cx('modal-backdrop')}>
-                            <h2>Success {'\u2714'}</h2>
+                        <h2>Success {'\u2714'}</h2>
                     </div>
                 </div>
-            }
+            )}
         </div>
     );
 }

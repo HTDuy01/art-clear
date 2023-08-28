@@ -22,7 +22,7 @@ function Cart() {
     useEffect(() => {
         let item = JSON.parse(localStorage.getItem('cart'));
         if (item) {
-            axios.post(' https://art-clear-backend.onrender.com/api/auth/productCart', item).then((res) => {
+            axios.post(' http://localhost:8080/api/auth/productCart', item).then((res) => {
                 setCart(res.data.data);
                 setRunAgain('stop');
             });
@@ -44,7 +44,7 @@ function Cart() {
         });
 
         localStorage.setItem('cart', JSON.stringify(obj));
-        axios.post('https://art-clear-backend.onrender.com/api/auth/productCart', obj).then((res) => {
+        axios.post('http://localhost:8080/api/auth/productCart', obj).then((res) => {
             if (res.data.errors) {
                 console.log(res.data.errors);
             } else {
@@ -67,7 +67,7 @@ function Cart() {
         });
 
         localStorage.setItem('cart', JSON.stringify(obj));
-        axios.post('https://art-clear-backend.onrender.com/api/auth/productCart', obj).then((res) => {
+        axios.post('http://localhost:8080/api/auth/productCart', obj).then((res) => {
             if (res.data.errors) {
                 console.log(res.data.errors);
             } else {
@@ -82,7 +82,7 @@ function Cart() {
 
         delete obj[id];
         localStorage.setItem('cart', JSON.stringify(obj));
-        axios.post('https://art-clear-backend.onrender.com/api/auth/productCart', obj).then((res) => {
+        axios.post('http://localhost:8080/api/auth/productCart', obj).then((res) => {
             if (res.data.errors) {
                 console.log(res.data.errors);
             } else {
@@ -97,15 +97,15 @@ function Cart() {
 
     function formatPrice(price) {
         if (price >= 1_000_000_000) {
-          const formattedPrice = (price / 1_000_000_000).toFixed(2);
-          return `$${formattedPrice}B`;
+            const formattedPrice = (price / 1_000_000_000).toFixed(2);
+            return `$${formattedPrice}B`;
         } else if (price >= 1_000_000) {
-          const formattedPrice = (price / 1_000_000).toFixed(2);
-          return `$${formattedPrice}M`;
+            const formattedPrice = (price / 1_000_000).toFixed(2);
+            return `$${formattedPrice}M`;
         } else {
-          return `$${price}`;
+            return `$${price}`;
         }
-      }
+    }
 
     function renderProductCart() {
         if (Object.keys(obj).length === 0) {
@@ -113,7 +113,7 @@ function Cart() {
         }
 
         return Object.keys(cart).map((key, value) => {
-            const srcImg = 'https://art-clear-backend.onrender.com/api/auth/upload/product/' + cart[key].id;
+            const srcImg = 'http://localhost:8080/api/auth/upload/product/' + cart[key].id;
             const name = cart[key].picture_name;
             const price = cart[key].price;
             const quantity = cart[key].quantity;
@@ -164,7 +164,6 @@ function Cart() {
     }
 
     // HandlePay
-    
 
     return (
         <div className={cx1('wrapper')}>
@@ -177,7 +176,7 @@ function Cart() {
                         <p className={cx1('cart-subtotal__title')}>Cart Subtotal</p>
                         <p className={cx1('total-price')}>{formatPrice(S)}</p>
                     </div>
-                    <Button primary className={cx1('btn-pay')} >
+                    <Button primary className={cx1('btn-pay')}>
                         <Pay total={S} Cart={Cart} getRunAgain={getRunAgain} />
                     </Button>
                 </div>

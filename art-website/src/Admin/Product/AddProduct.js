@@ -36,7 +36,7 @@ function AddProduct() {
     // get data Categories, Artists
     useEffect(() => {
         axios
-            .get(' https://art-clear-backend.onrender.com/api/auth/ListCategories')
+            .get(' http://localhost:8080/api/auth/ListCategories')
             .then((res) => {
                 setCategories(res.data);
                 // console.log(res.data);
@@ -45,7 +45,7 @@ function AddProduct() {
                 console.log(err);
             });
         axios
-            .get(' https://art-clear-backend.onrender.com/api/auth/ListArtists')
+            .get(' http://localhost:8080/api/auth/ListArtists')
             .then((res) => {
                 setArtists(res.data);
                 // console.log(res.data);
@@ -106,35 +106,31 @@ function AddProduct() {
         let flag = true;
         if (addProduct.picture_name.trim() === '') {
             flag = false;
-        }else{
+        } else {
         }
         if (addProduct.artist_id.trim() === '') {
             flag = false;
-        }else{
+        } else {
         }
         if (addProduct.category_id.trim() === '') {
             // set lỗi ở đây
             flag = false;
-        }else{
-            
+        } else {
         }
         if (addProduct.description.trim() === '') {
             // set lỗi ở đây
             flag = false;
-        }else{
-            
+        } else {
         }
         if (addProduct.quantity.trim() === '') {
             // set lỗi ở đây
             flag = false;
-        }else{
-            
+        } else {
         }
         if (addProduct.price.trim() === '') {
             // set lỗi ở đây
             flag = false;
-        }else{
-            
+        } else {
         }
 
         if (file == '') {
@@ -147,14 +143,11 @@ function AddProduct() {
                 // set lỗi "file bạn chọn không phải ảnh" + typeFile;
                 flag = false;
                 console.log('không phải file ảnh' + typeFile);
-            }else{
-            
+            } else {
             }
         }
 
         if (flag) {
-           
-        
             let formData = new FormData();
             formData.append('artist_id', addProduct.artist_id);
             formData.append('category_id', addProduct.category_id);
@@ -165,7 +158,7 @@ function AddProduct() {
             formData.append('file', file);
 
             axios
-                .post(' https://art-clear-backend.onrender.com/api/auth/addImage', formData)
+                .post(' http://localhost:8080/api/auth/addImage', formData)
                 .then((res) => {
                     // console.log(res);
                     setProduct({
@@ -175,21 +168,26 @@ function AddProduct() {
                         description: '',
                         quantity: '',
                         price: '',
-                    })
-                    setFile('')
-                    navigate('/Admin/Product')
+                    });
+                    setFile('');
+                    navigate('/Admin/Product');
                 })
                 .catch((err) => {
                     console.log(err);
-                    alert("thêm thất bại")
+                    alert('thêm thất bại');
                 });
             // console.log(addProduct);
-           
         }
     }
     return (
         <>
-            <span> <Link to={config.routes.Product}> <FontAwesomeIcon icon={faChevronLeft}/> </Link></span>
+            <span>
+                {' '}
+                <Link to={config.routes.Product}>
+                    {' '}
+                    <FontAwesomeIcon icon={faChevronLeft} />{' '}
+                </Link>
+            </span>
             <div className={styles.container_addCategories_addArtists}>
                 <button className={styles.addCategories}>
                     <AddCategories getCategories={getCategories} />
@@ -215,7 +213,7 @@ function AddProduct() {
                     <label for="inputPhone3" className="col-sm-2 col-form-label">
                         Artist:{' '}
                     </label>
-                    <div class="col-sm-10">
+                    <div className="col-sm-10">
                         <select name="artist_id" onChange={handleChange}>
                             <option value="">Artists</option>
                             {renderArtists()}
@@ -246,7 +244,7 @@ function AddProduct() {
                     <label for="inputPhone3" className="col-sm-2 col-form-label">
                         Quantity:{' '}
                     </label>
-                    <div class="col-sm-10">
+                    <div className="col-sm-10">
                         <input type="number" className="form-control" id="inputPhone3" name="quantity" onChange={handleChange} />
                     </div>
                 </div>
@@ -254,7 +252,7 @@ function AddProduct() {
                     <label for="inputEmail3" className="col-sm-2 col-form-label">
                         Price:{' '}
                     </label>
-                    <div class="col-sm-10">
+                    <div className="col-sm-10">
                         <input type="text" className="form-control" id="inputEmail3" name="price" onChange={handleChange} />
                     </div>
                 </div>
@@ -263,7 +261,7 @@ function AddProduct() {
                     <label for="inputPhone3" className="col-sm-2 col-form-label">
                         name:{' '}
                     </label>
-                    <div class="col-sm-10">
+                    <div className="col-sm-10">
                         <input id="Image" type="file" name="file" multiple onChange={handleFile} />
                         {selectedImage && <img width="40%" src={selectedImage} alt="Uploaded" />}
                     </div>

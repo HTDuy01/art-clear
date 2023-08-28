@@ -60,7 +60,7 @@ function AddArtists(props) {
                 phone: addArtists.phone,
             };
             axios
-                .post(' https://art-clear-backend.onrender.com/api/auth/Admin/AddArtists', data)
+                .post('http://localhost:8080/api/auth/Admin/AddArtists', data)
                 .then((res) => {
                     props.getArtists(res.data);
                 })

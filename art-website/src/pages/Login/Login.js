@@ -76,12 +76,11 @@ function Login() {
             formData.append('usernameOrEmail', login.username);
             formData.append('password', login.password);
             axios
-                .post('https://art-clear-backend.onrender.com/api/auth/signin', formData)
+                .post('http://localhost:8080/api/auth/signin', formData)
                 .then((res) => {
                     let level = res.data.roles;
-                    
+
                     Object.keys(level).map((key, index) => {
-                        
                         level = level[0].role_ID;
                     });
                     const plaintext = String(level);
@@ -90,22 +89,21 @@ function Login() {
                     // Mã hóa
                     const ciphertext = CryptoJS.AES.encrypt(plaintext, key).toString();
 
-                    
                     localStorage.setItem('level', JSON.stringify(ciphertext));
                     localStorage.setItem('user', JSON.stringify(res));
 
                     const checkLogin = true;
                     localStorage.setItem('checkLogin', JSON.stringify(checkLogin));
-                    setIsLoading(true)
+                    setIsLoading(true);
                     const timer = setTimeout(() => {
-                        setIsLoading(false)
+                        setIsLoading(false);
                         navigate('/');
                     }, 2000);
                     return () => clearTimeout(timer);
                 })
                 .catch((err) => {
-                    if(login.username != "" && login.password !="" && login.password.length >6 ){
-                        setIsvalidate(true)
+                    if (login.username != '' && login.password != '' && login.password.length > 6) {
+                        setIsvalidate(true);
                     }
                     setFormErrors(validate(formValues));
                 });
@@ -116,13 +114,13 @@ function Login() {
         <div className={cx('wrapper')}>
             <header className={cx('header')}>
                 <Link to={config.routes.home} className={cx('logo-link')}>
-                    <img  src={Logo} alt="Logo" className={cx('logo')} />
+                    <img src={Logo} alt="Logo" className={cx('logo')} />
                 </Link>
             </header>
             <div className={cx('container')}>
                 <div className={cx('content-container')}>
                     <h1 className={cx('title')}>Welcome back to the world’s marketplace for design</h1>
-                    <img width='100%' src={imageLogin} alt="imageLogin" />
+                    <img width="100%" src={imageLogin} alt="imageLogin" />
                 </div>
 
                 <div className={cx('login-container')}>
@@ -148,7 +146,7 @@ function Login() {
                         </Button>
                         <div className={cx('text-form')}>
                             <label className={cx('label-login')} htmlFor="password">
-                               <Link to={config.routes.ForgotPassword}>Forgot Password?</Link>
+                                <Link to={config.routes.ForgotPassword}>Forgot Password?</Link>
                             </label>
                         </div>
                     </form>
@@ -165,16 +163,15 @@ function Login() {
                 </div>
             </div>
             {/* isLoading */}
-            {isLoading &&
+            {isLoading && (
                 <div className={cx('overlay')}>
                     <div className={cx('popup')}>
-
                         <div className={cx('form_container')}>
                             <Loading />
                         </div>
                     </div>
                 </div>
-            }
+            )}
         </div>
     );
 }

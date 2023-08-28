@@ -133,7 +133,7 @@ function UpdatePersonal(props) {
                 formdata.append('file', file);
             }
             axios
-                .put('https://art-clear-backend.onrender.com/api/auth/editUser/' + id.id, formdata)
+                .put('http://localhost:8080/api/auth/editUser/' + id.id, formdata)
                 .then((res) => {
                     console.log(res);
                     localStorage.setItem('user', JSON.stringify(res));
@@ -182,11 +182,7 @@ function UpdatePersonal(props) {
                             </div>
 
                             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                                <Image
-                                    borderRadius="full"
-                                    boxSize="150px"
-                                    src={selectedImage ? selectedImage : 'https://art-clear-backend.onrender.com/api/auth/detailsUser/avatar/' + id.id}
-                                />
+                                <Image borderRadius="full" boxSize="150px" src={selectedImage ? selectedImage : 'http://localhost:8080/api/auth/detailsUser/avatar/' + id.id} />
                                 <input style={{ marginTop: '10px' }} type="file" multiple onChange={handleFile} />
                             </div>
                         </form>

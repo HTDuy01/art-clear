@@ -21,7 +21,7 @@ function ProductDetail(props) {
     const [listComment, setListComment] = useState([]);
     const [idREPLY, setidREPLY] = useState('');
     const [runAgain, setRunAgain] = useState('stop');
-    const srcImg = 'https://art-clear-backend.onrender.com/api/auth/upload/product/' + params.id;
+    const srcImg = 'http://localhost:8080/api/auth/upload/product/' + params.id;
     const [dataCategory, setDataCategory] = useState([]);
 
     function getRunAgain(data) {
@@ -45,13 +45,13 @@ function ProductDetail(props) {
     useEffect(() => {
         const getData = async () => {
             try {
-                const response = await axios.get(`https://art-clear-backend.onrender.com/api/auth/detailsImage/${params.id}`);
+                const response = await axios.get(`http://localhost:8080/api/auth/detailsImage/${params.id}`);
                 setData(response.data);
 
-                const listComment = await axios.get(`https://art-clear-backend.onrender.com/api/auth/comment/${params.id}`);
+                const listComment = await axios.get(`http://localhost:8080/api/auth/comment/${params.id}`);
                 setListComment(listComment.data);
 
-                const listCategory = await axios.get('https://art-clear-backend.onrender.com/api/auth/ListCategories');
+                const listCategory = await axios.get('http://localhost:8080/api/auth/ListCategories');
                 setDataCategory(listCategory.data);
 
                 setRunAgain('stop');

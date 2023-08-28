@@ -40,7 +40,7 @@ function Personal() {
             email: obj.data.email,
             phone: obj.data.phone,
         });
-        setSrc('https://art-clear-backend.onrender.com/api/auth/detailsUser/avatar/' + obj.data.id);
+        setSrc('http://localhost:8080/api/auth/detailsUser/avatar/' + obj.data.id);
     }, []);
 
     // đẩy dữ liệu lên api
@@ -73,7 +73,7 @@ function Personal() {
                     <UpdatePersonal />
                 </div>
                 <div className={styles.images}>
-                    <Image borderRadius="full" boxSize="150px" src={src ? src : 'https://art-clear-backend.onrender.com/api/auth/detailsUser/avatar/' + id.id} />
+                    <Image borderRadius="full" boxSize="150px" src={src ? src : 'http://localhost:8080/api/auth/detailsUser/avatar/' + id.id} />
                 </div>
             </form>
         </div>

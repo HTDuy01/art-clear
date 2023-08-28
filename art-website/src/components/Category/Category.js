@@ -16,7 +16,7 @@ function Category() {
     useEffect(() => {
         const getCategory = async () => {
             try {
-                const res = await axios.get(' https://art-clear-backend.onrender.com/api/auth/ListCategories');
+                const res = await axios.get(' http://localhost:8080/api/auth/ListCategories');
                 setData(res.data);
             } catch (error) {
                 console.error(error);

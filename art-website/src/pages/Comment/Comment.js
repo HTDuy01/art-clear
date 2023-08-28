@@ -26,7 +26,7 @@ function Comment(props) {
         e.preventDefault();
         if (checkLogin) {
             if (comment.trim() == '') {
-                alert('vui lòng nhập'); 
+                alert('vui lòng nhập');
             } else {
                 // const
                 // let x = 1
@@ -42,7 +42,7 @@ function Comment(props) {
                         comment: comment,
                     };
                     axios
-                        .post('https://art-clear-backend.onrender.com/api/auth/comment/add', data)
+                        .post('http://localhost:8080/api/auth/comment/add', data)
                         .then((res) => {
                             // console.log(res.data);
 
@@ -62,12 +62,10 @@ function Comment(props) {
                 }
             }
         } else {
-            let answer = window.confirm("Please log in !");
+            let answer = window.confirm('Please log in !');
             if (answer) {
-                navigate('/login')
-            }
-            else {
-                
+                navigate('/login');
+            } else {
             }
         }
     }

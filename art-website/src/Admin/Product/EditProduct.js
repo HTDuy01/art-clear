@@ -17,7 +17,7 @@ function EditProduct(props) {
     });
 
     useEffect(() => {
-        axios.get(' https://art-clear-backend.onrender.com/api/auth/detailsImage/' + props.id).then((res) => {
+        axios.get(' http://localhost:8080/api/auth/detailsImage/' + props.id).then((res) => {
             seteditProduct({
                 artist_id: res.data.artistId,
                 category_id: res.data.categoryId,
@@ -127,7 +127,7 @@ function EditProduct(props) {
                 formData.append('file', file);
             }
             axios
-                .put(' https://art-clear-backend.onrender.com/api/auth/editImage/' + props.id, formData)
+                .put(' http://localhost:8080/api/auth/editImage/' + props.id, formData)
                 .then((res) => {
                     props.getRunAgain('run');
                     // console.log(res);
@@ -157,23 +157,23 @@ function EditProduct(props) {
                             <label htmlFor="category_id">
                                 <b>Category</b>
                             </label>
-                            <input type="text"  name="category_id" value={editProduct.category_id} onChange={handleChange} required />
+                            <input type="text" name="category_id" value={editProduct.category_id} onChange={handleChange} required />
                             <label htmlFor="picture_name">
                                 <b>Name</b>
                             </label>
-                            <input type="text"  name="picture_name" value={editProduct.picture_name} onChange={handleChange} required />
+                            <input type="text" name="picture_name" value={editProduct.picture_name} onChange={handleChange} required />
                             <label htmlFor="description">
                                 <b>Description</b>
                             </label>
-                            <input type="text"  name="description" value={editProduct.description} onChange={handleChange} required />
+                            <input type="text" name="description" value={editProduct.description} onChange={handleChange} required />
                             <label htmlFor="quantity">
                                 <b>Quantity</b>
                             </label>
-                            <input type="text"  name="quantity" value={editProduct.quantity} onChange={handleChange} required />
+                            <input type="text" name="quantity" value={editProduct.quantity} onChange={handleChange} required />
                             <label htmlFor="price">
                                 <b>Price</b>
                             </label>
-                            <input type="text"  name="price" value={editProduct.price} onChange={handleChange} required />
+                            <input type="text" name="price" value={editProduct.price} onChange={handleChange} required />
                             <label>
                                 <b>Iamge</b>
                             </label>

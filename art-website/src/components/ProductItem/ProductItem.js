@@ -20,11 +20,11 @@ function ProductItem({ size = '' }) {
 
     const fetchData = async () => {
         try {
-            const productHomeResponse = await axios.get(`https://art-clear-backend.onrender.com/api/auth/listImage?size=${size}`);
+            const productHomeResponse = await axios.get(`http://localhost:8080/api/auth/listImage?size=${size}`);
             setProductHome(productHomeResponse.data.images);
 
             const artistIds = Object.keys(productHomeResponse.data.images).map((key) => productHomeResponse.data.images[key].artistId);
-            const artistPromises = artistIds.map((artistId) => axios.get(`https://art-clear-backend.onrender.com/api/auth/artistDetails/${artistId}`));
+            const artistPromises = artistIds.map((artistId) => axios.get(`http://localhost:8080/api/auth/artistDetails/${artistId}`));
             const artistResponses = await Promise.all(artistPromises);
             const artistsData = artistResponses.reduce((data, response, index) => {
                 data[artistIds[index]] = response.data.name;
@@ -79,7 +79,7 @@ function ProductItem({ size = '' }) {
         }
 
         return Object.keys(productHome).map((key, index) => {
-            const srcImg = 'https://art-clear-backend.onrender.com/api/auth/upload/product/' + productHome[key].id;
+            const srcImg = 'http://localhost:8080/api/auth/upload/product/' + productHome[key].id;
             const title = productHome[key].pictureName;
             const price = productHome[key].price;
             const artistId = productHome[key].artistId;

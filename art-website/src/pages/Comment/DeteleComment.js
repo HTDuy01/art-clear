@@ -1,45 +1,45 @@
-import axios from "axios";
-import { useState } from "react";
-import'./DeteleComment.css'
-function DeteleComment(props){
-    
-
-        const [showNotification, setShowNotification] = useState(false);
-        const handleCancel = () => {
-            setShowNotification(false);
-        };
-        const hancleDetele = () => {
-            axios.delete('https://art-clear-backend.onrender.com/api/auth/comment/delete/'+props.id)
-            .then(res=>{
+import axios from 'axios';
+import { useState } from 'react';
+import './DeteleComment.css';
+function DeteleComment(props) {
+    const [showNotification, setShowNotification] = useState(false);
+    const handleCancel = () => {
+        setShowNotification(false);
+    };
+    const hancleDetele = () => {
+        axios
+            .delete('http://localhost:8080/api/auth/comment/delete/' + props.id)
+            .then((res) => {
                 // console.log(res);
             })
-            .catch(err=>{
+            .catch((err) => {
                 console.log(err);
-            })
-            setShowNotification(false);
-            props.handleEdit(false);
-            props.getRunAgain(false);
-        };
+            });
+        setShowNotification(false);
+        props.handleEdit(false);
+        props.getRunAgain(false);
+    };
 
-        const handleShowNotification = () => {
-            setShowNotification(true);
-        };
-       
+    const handleShowNotification = () => {
+        setShowNotification(true);
+    };
 
-        return (
-            <div>
+    return (
+        <div>
             <button onClick={handleShowNotification}>Detele</button>
-            
+
             {showNotification && (
                 <div className="notificationDetele">
-                <p>You want to delete this comment ?</p>
-                <button className="Cancel" onClick={handleCancel}>Cancel</button>
-                <button className="Oke" onClick={hancleDetele}>OK</button>
+                    <p>You want to delete this comment ?</p>
+                    <button className="Cancel" onClick={handleCancel}>
+                        Cancel
+                    </button>
+                    <button className="Oke" onClick={hancleDetele}>
+                        OK
+                    </button>
                 </div>
             )}
-            
-            
-            </div>
-         );
+        </div>
+    );
 }
 export default DeteleComment;
